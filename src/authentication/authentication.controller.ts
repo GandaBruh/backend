@@ -14,12 +14,12 @@ export class AuthenticationController {
   ) {}
 
   @Post('login')
-  public async login(@Body() body: LoginDTO) {
+  login(@Body() body: LoginDTO) {
     return this.loginUsecase.execute(body)
   }
 
   @Post('register')
-  public async register(@Body() body: RegisterDTO) {
+  register(@Body() body: RegisterDTO) {
     return this.registerUsecase.execute(body)
   }
 }
