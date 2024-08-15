@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { PostModule } from './post/post.module';
 import { JwtModule } from '@nestjs/jwt';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: ([
@@ -13,7 +14,8 @@ import { JwtModule } from '@nestjs/jwt';
   })] as unknown as Array<DynamicModule | Type<any>>)
   .concat([
     AuthenticationModule,
-    PostModule
+    PostModule,
+    UserModule
   ]),
   controllers: [AppController],
   providers: [AppService],

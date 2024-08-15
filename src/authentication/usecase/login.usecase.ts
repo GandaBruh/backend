@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { JwtService, JwtSignOptions } from '@nestjs/jwt';
 import { BaseUsecase } from 'src/common/interface/usecase.interface';
-import { LoginDTO } from '../dto/logion.dto';
+import { LoginDTO } from '../dto/login.dto';
 
 @Injectable()
 export class LoginUsecase extends BaseUsecase<Promise<any>> {
@@ -34,9 +34,9 @@ export class LoginUsecase extends BaseUsecase<Promise<any>> {
 
     const accessToken = this.jwtService.sign(payload, signOptions);
 
-    return  { 
+    return {
       accessToken: accessToken,
-      payload: payload
-    }
+      payload: payload,
+    };
   }
 }

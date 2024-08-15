@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, UseGuards } from '@nestjs/common';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { User } from '@prisma/client';
 import { CurrentUser } from 'src/common/auth';
 import { AuthGuard } from 'src/common/middleware/jwt.guard';
@@ -23,6 +23,7 @@ export class PostController {
   ) {}
 
   @Post('create')
+  @ApiOperation({ summary: 'Create post' })
   create(
     @CurrentUser() user: User,
     @Body() body: CreatePostDTO
@@ -31,6 +32,7 @@ export class PostController {
   }
 
   @Post("update/:id")
+  @ApiOperation({ summary: 'Update post by id and own user login' })
   update(
     @CurrentUser() user: User,
     @Body() body: UpdatePostDTO,
@@ -40,6 +42,7 @@ export class PostController {
   }
 
   @Get("get")
+  @ApiOperation({ summary: 'Get all post' })
   get(
 
   ){
@@ -47,6 +50,7 @@ export class PostController {
   }
 
   @Get("get/user/:userId")
+  @ApiOperation({ summary: 'Get post by user id' })
   getByUser(
     @Param('userId') userId: string
   ){
@@ -54,6 +58,7 @@ export class PostController {
   }
 
   @Delete("delete/:id")
+  @ApiOperation({ summary: 'Delete post with id and own user login' })
   deletePost(
     @Param('id') id: string,
     @CurrentUser() user: User

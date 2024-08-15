@@ -17,7 +17,10 @@ export class RegisterUsecase extends BaseUsecase<Promise<any>> {
       data: {
         username: body.username.toLowerCase(),
         password: body.password,
+        name: body.name || undefined
       },
     });
+
+    return create
   }
 }
