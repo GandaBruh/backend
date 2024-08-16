@@ -9,6 +9,13 @@ export class GetPostUsecase extends BaseUsecase<Promise<any>>{
         const post = await this.prismaSevice.post.findMany({
             where:{
                 userId: Number(userId) || undefined
+            },
+            include:{
+                user:{
+                    select:{
+                        name: true,
+                    }
+                }
             }
         })
         return post

@@ -6,6 +6,8 @@ import { throwError } from 'rxjs';
 @Injectable()
 export class RegisterUsecase extends BaseUsecase<Promise<any>> {
   async execute(body: RegisterDTO): Promise<any> {
+
+    if(!body.username || !body.password) throw new BadRequestException('Invalid username or password')
     const exist = await this.prismaSevice.user.findUnique({
       where: {
         username: body.username.toLowerCase(),
