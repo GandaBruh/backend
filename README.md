@@ -34,11 +34,10 @@ $ yarn install
 
 The engine "node" is incompatible with this module. Expected version "^18.13.0 || >=20.9.0". Got "16.20.1"
 if got this error
+
 ```bash
 $ nvm use 20.9.0
 ```
-
-
 
 ## Configure Database
 
@@ -67,11 +66,6 @@ $ yarn prisma db seed
 # development
 $ yarn run start
 
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
 ```
 
 ## Test
@@ -79,12 +73,6 @@ $ yarn run start:prod
 ```bash
 # unit tests
 $ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
 ```
 
 ## OPEN API
