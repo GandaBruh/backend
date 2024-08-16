@@ -33,6 +33,7 @@ $ yarn install
 ```
 
 ## Configure Database
+
 Open the .env file.
 Locate the DATABASE_URL variable and update it to point to your PostgreSQL database. Example:
 
@@ -41,11 +42,12 @@ DATABASE_URL="postgresql://user:password@localhost:5432/your-database"
 ```
 
 ## Migrate Database
+
 ```bash
 $ yarn prisma migrate dev --name init
 ```
 
-## Seed database 
+## Seed database
 
 ```bash
 $ yarn prisma db seed
@@ -76,3 +78,19 @@ $ yarn run test:e2e
 # test coverage
 $ yarn run test:cov
 ```
+
+## OPEN API
+
+Once the server is running, navigate to http://localhost:3000/api to access the Swagger OpenAPI documentation.
+
+## Using Swagger
+
+**1. Login**:  
+In Swagger, log in using your username and password in authentication login path use username as username and password as password.
+
+**2. Token Authentication**:  
+After logging in, retrieve the access token.  
+Use this access token to authenticate your requests by clicking on the authorization button at the top right of the Swagger UI.
+
+**3. Start Using the API**:  
+With the access token in place, you can begin making authenticated API requests.
