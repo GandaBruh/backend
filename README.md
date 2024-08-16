@@ -28,15 +28,17 @@
 
 ## Installation
 
-The engine "node" is incompatible with this module. Expected version "^18.13.0 || >=20.9.0". Got "16.20.1"
-if got this error
-```bash
-nvm use 20.9.0
-```
-
 ```bash
 $ yarn install
 ```
+
+The engine "node" is incompatible with this module. Expected version "^18.13.0 || >=20.9.0". Got "16.20.1"
+if got this error
+```bash
+$ nvm use 20.9.0
+```
+
+
 
 ## Configure Database
 
