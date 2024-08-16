@@ -82,11 +82,14 @@ Once the server is running, navigate to http://localhost:3000/api to access the 
 ## Using Swagger
 
 **1. Login**:  
-In Swagger, log in using your username and password in authentication login path use username as username and password as password.
+In Swagger, log in using your username and password in authentication/login path use username as username and password as password.
+
+![Login](./image/login.png)
 
 **2. Token Authentication**:  
 After logging in, retrieve the access token.  
-Use this access token to authenticate your requests by clicking on the authorization button at the top right of the Swagger UI.
+Use this access token to authenticate your requests by clicking on the authorize button at the top right of the Swagger UI.
+![Login](./image/auth.png)
 
 **3. Start Using the API**:  
 With the access token in place, you can begin making authenticated API requests.
